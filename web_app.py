@@ -104,6 +104,7 @@ elif (len(uploaded_pdfs) !=0) and (len(keywords[0]) != 0):
                 matches, keyword_counts = process_file(pdf_file, keywords)
                 all_matches.extend(matches)
                 all_keyword_counts.append({**{'filename': pdf_file.name}, **keyword_counts})
+                print(f"{pdf_file} analyzed successfully.")
             return all_matches, all_keyword_counts
         
 
