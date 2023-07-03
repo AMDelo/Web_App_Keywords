@@ -7,6 +7,7 @@ from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 import pandas as pd
 import plotly.express as px
+import time
 
 st.title('Text Mining - Sustainable Finance Disclosure')
 
@@ -101,10 +102,13 @@ elif (len(uploaded_pdfs) !=0) and (len(keywords[0]) != 0):
             all_matches = []
             all_keyword_counts = []
             for pdf_file in pdf_files:
+                start_time = time.time()
                 matches, keyword_counts = process_file(pdf_file, keywords)
                 all_matches.extend(matches)
                 all_keyword_counts.append({**{'filename': pdf_file.name}, **keyword_counts})
-                st.write(f"{pdf_file.name} analyzed successfully.")
+                end_time = time.time()
+                execution_time = end_time - start_time
+                st.write(f"{pdf_file.name} analyzed successfully in {round(execution_time,1)} seconds")
             return all_matches, all_keyword_counts
         
 
