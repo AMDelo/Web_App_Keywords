@@ -48,7 +48,7 @@ elif (len(uploaded_pdfs) !=0) and (len(keywords[0]) != 0):
             interpreter = PDFPageInterpreter(manager, converter)
             page_texts = []
 
-            for page in PDFPage.get_pages(pdf, check_extractable=True):
+            for page in PDFPage.get_pages(pdf, check_extractable=False):
                 
                 interpreter.process_page(page)
                 page_texts.append(retstr.getvalue())
