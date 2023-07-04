@@ -30,7 +30,7 @@ keywords = keywords.replace(";", ",")
 keywords = keywords.split(',')
 
 
-if len(uploaded_pdfs) is 0:
+if len(uploaded_pdfs) == 0:
     st.write("#### Please upload one or more PDF files so the analysis can begin.")
 if len(keywords[0]) == 0:
     st.write("#### Please upload one or more keywords.")
