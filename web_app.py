@@ -15,11 +15,11 @@ col1,col2 = st.columns(2)
 
 with col1:
     st.write("#### Upload one or more PDF files")
-    uploaded_pdfs = st.file_uploader('', accept_multiple_files = True, label_visibility='collapsed')
+    uploaded_pdfs = st.file_uploader('s', accept_multiple_files = True, label_visibility='collapsed')
 
 with col2:
     st.write("#### Write one or more keywords separated by a comma")
-    keywords = st.text_input("", help = 'Split keywords by comma', label_visibility='collapsed')
+    keywords = st.text_input('s', help = 'Split keywords by comma', label_visibility='collapsed')
 
 #remove spaces if they exist
 keywords = keywords.replace(" ", "")
